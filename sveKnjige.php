@@ -98,7 +98,7 @@
     <div class="card">
         <img src=<?php echo $red["slika"]?>  style="width:100%">
         <h5> <?php echo $red["naziv"]?>  </h5>
-        <span class="kategorija"> <?php echo $red["nazivKategorije"]?></span>
+        <span class="kategorija"> <?php echo $red["nazivKategorije"]?></span> 
         <p class="price"> <?php echo $red["cena"]?></p>
         <p>  <?php echo $red["opis"]?></p>
         <button type="button" class="btn btn-danger"    ><i class="fas fa-trash" onclick="obrisiknjigu(<?php echo   $red['idKnjige'];?>)"></i></button>  
