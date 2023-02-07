@@ -46,11 +46,10 @@
             return $conn->query($upit);
         }
 
-
         public static function obrisiknjigu($id, $conn){
             $upit = " delete from knjige where idKnjige=$id";
             return $conn->query($upit);
         }
-
+        
 
     }

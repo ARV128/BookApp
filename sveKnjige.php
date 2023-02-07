@@ -117,26 +117,26 @@
 
 <script>
 
-        function obrisiknjigu(deleteid){
+function obrisiknjigu(deleteid){
 
 
-        request = $.ajax({  
-            url: 'handler/delete.php',  
-            type: 'post', 
-            data: {deleteid:deleteid},
+request = $.ajax({  
+    url: 'handler/delete.php',  
+    type: 'post', 
+    data: {deleteid:deleteid},
 
 
-            success: function(data, status){
-                location.reload(true);
-                alert("Uspesno obrisano!");
-            }
+    success: function(data, status){
+        location.reload(true);
+        alert("Uspesno obrisano!");
+    }
 
 
-        });
+});
 
 
 
-        }
+}
 
 
     </script>
