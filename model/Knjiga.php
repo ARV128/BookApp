@@ -23,10 +23,9 @@
 
 
         public static function vratiSveKnjige($conn){
-            $upit = "select * from knjige  n inner join kategorija k on k.idKategorije=knj.kategorija";
+            $upit = "select * from knjige  knj inner join kategorija k on k.idKategorije=knj.kategorija";
             return $conn->query($upit);
         }
-
 
         public static function vratiSveKnjigeASC($conn){
             $upit = "select * from nakit  n inner join kategorija k on k.idKategorije=n.kategorija order by n.cena asc ";
