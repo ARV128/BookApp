@@ -1,3 +1,4 @@
+
 <?php
     include 'config.php';
     include 'model/Kategorija.php';
@@ -9,7 +10,6 @@
 
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -170,55 +170,46 @@
 
 
 
+$('#dodajNoviProizvod').submit(function () {
 
-            $('#dodajNoviProizvod').submit(function () {
+var form = $('#dodajNoviProizvod')[0];
+console.log(form);
+var formData = new FormData(form);
+event.preventDefault();  
+console.log(formData);
 
-                var form = $('#dodajNoviProizvod')[0];
-                console.log(form);
-                var formData = new FormData(form);
-                event.preventDefault();  
-                console.log(formData);
+request = $.ajax({  
+    url: 'handler/add.php',  
+    type: 'post', 
+    processData: false,
+    contentType: false,
+    data: formData
+});
+console.log(request);
+request.done(function (response, textStatus, jqXHR) {
+    console.log(textStatus);
+    console.log(jqXHR);
+console.log(response);
 
-                request = $.ajax({  
-                    url: 'handler/add.php',  
-                    type: 'post', 
-                    processData: false,
-                    contentType: false,
-                    data: formData
-                });
-                console.log(request);
-                request.done(function (response, textStatus, jqXHR) {
-                    console.log(textStatus);
-                    console.log(jqXHR);
-                console.log(response);
+    if (response === "Success") {
+        alert("Uspesno dodato");
+        
+        header('Location: pocetna.php'); 
+    }
+    else {
 
-                    if (response === "Success") {
-                        alert("Uspesno dodato");
-                        
-                        header('Location: pocetna.php'); 
-                    }
-                    else {
-                
-                        console.log("Neuspesno" + response);
-                    }
-                });
+        console.log("Neuspesno" + response);
+    }
+});
 
-                request.fail(function (jqXHR, textStatus, errorThrown) {
-                    console.error('Greska: ' + textStatus, errorThrown);
-                });
-        }); 
-
-
-
-
-
-
-
-
-
-
+request.fail(function (jqXHR, textStatus, errorThrown) {
+    console.error('Greska: ' + textStatus, errorThrown);
+});
+}); 
 
 
        </script>
+
+       
 </body>
 </html>

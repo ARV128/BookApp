@@ -10,7 +10,7 @@
 
      
 
-      $nakit = new Knjiga(null,$_POST['naziv'],$_POST['opis'],$_POST['cena'],$_POST['slika'],$_POST['kategorije']);
+      $knjiga = new Knjiga(null,$_POST['naziv'],$_POST['opis'],$_POST['cena'],$_POST['slika'],$_POST['kategorije']);
   
        
         $status=Knjiga::dodajKnjigu($knjiga,$conn);
