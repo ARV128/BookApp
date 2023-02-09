@@ -1,8 +1,5 @@
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,66 +10,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            margin: auto;
-            text-align: center;
-            font-family: arial;
-            padding: 10px;
-        }
-
-        .price {
-            color: grey;
-            font-size: 22px;
-        }
-
-        .card button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-        }
-
-        .card button:hover {
-             opacity: 0.7;
-        }
-        .sav-nakit{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            
-            
-            margin-left: 9%;
-            margin-right:9%;
-            margin-top: 10%;
-            justify-content: space-between;
-        }
-        .kategorija {
-            height: 25px;
-            width: 100px;
-            background-color: #9E9DAD;
-            border-radius: 10px;
-            display: inline-block;
-        }
+        
     </style>
 
 </head>
-<body style=" background-image: url('https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGpld2VsbGVyeSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80');    background-repeat: no-repeat;   background-attachment: fixed;  background-size: cover;">
+<body style=" background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v546batch3-mynt-34-badgewatercolor_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=89288ef4b47127f7f34a5998b50e4470');    background-repeat: no-repeat;   background-attachment: fixed;  background-size: cover;">
     
 
 
 <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand">Navbar</a>
+<a class="navbar-brand" href="dodajNovuKnjigu.php" style="color:black;text-decoration: none;float:left"><strong>Dodaj novu knjigu</strong> </a>
+  
   <form class="form-inline">
-    <a class="navbar-brand" href="odjava.php">Odjavi se</a>
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="pretraga(document.getElementById('form1').value)">
-    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    
+    <input class="form-control mr-sm-2" type="search" id="form1" placeholder="Search" aria-label="Search" onkeyup="pretraga(document.getElementById('form1').value)">
+    
     <a class="navbar-brand" href="odjava.php">Odjavi se</a>
   </form>
 </nav>
@@ -99,11 +51,17 @@
     </div>
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
 
 <script>
        
@@ -112,7 +70,7 @@
     
 
             $("#products").html("");
-            $.post("savNakit.php", { cena: sortiraj }, function (data) {
+            $.post("sveKnjige.php", { cena: sortiraj }, function (data) {
                 $("#products").html(data);
             });
             $('html, body').animate({

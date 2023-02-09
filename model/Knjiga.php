@@ -23,24 +23,24 @@
 
 
         public static function vratiSveKnjige($conn){
-            $upit = "select * from knjige  knj inner join kategorija k on k.idKategorije=knj.kategorija";
+            $upit = "select * from knjiga  knj inner join kategorija k on k.idKategorije=knj.kategorija";
             return $conn->query($upit);
         }
 
         public static function vratiSveKnjigeASC($conn){
-            $upit = "select * from nakit  n inner join kategorija k on k.idKategorije=n.kategorija order by n.cena asc ";
+            $upit = "select * from knjiga  knj inner join kategorija k on k.idKategorije=knj.kategorija order by knj.cena asc ";
             return $conn->query($upit);
         }
 
 
         public static function vratiSveKnjigeDESC($conn){
-            $upit = "select * from nakit  n inner join kategorija k on k.idKategorije=n.kategorija order by n.cena desc";
+            $upit = "select * from knjiga  knj inner join kategorija k on k.idKategorije=knj.kategorija order by knj.cena desc";
             return $conn->query($upit);
         }
  
 
         public static function dodajKnjigu($knjiga, $conn){
-            $upit = "insert into knjige(naziv,opis,cena,slika,kategorija) values('$knjiga->naziv','$knjiga->opis',$knjiga->cena,'$knjiga->slika',$knjiga->kategorija)";
+            $upit = "insert into knjiga(naziv,opis,cena,slika,kategorija) values('$knjiga->naziv','$knjiga->opis',$knjiga->cena,'$knjiga->slika',$knjiga->kategorija)";
             
             return $conn->query($upit);
         }
