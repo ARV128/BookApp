@@ -46,7 +46,7 @@
         }
 
         public static function obrisiknjigu($id, $conn){
-            $upit = " delete from knjige where idKnjige=$id";
+            $upit = " delete from knjiga where idKnjige=$id";
             return $conn->query($upit);
         }
         
